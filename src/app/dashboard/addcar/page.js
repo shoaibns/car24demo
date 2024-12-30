@@ -28,7 +28,7 @@ function AddCar() {
       </div> */}
       <div className="overflow-x-auto border rounded-xl p-6">
         <div className="form-box">
-          <ul className="flex space-x-4 mb-6  border-b-2 border-b-gray-300 w-fit">
+          {/* <ul className="flex space-x-4 mb-6  border-b-2 border-b-gray-300 w-fit">
             <li
               className={
                 currentStep === 1
@@ -74,7 +74,7 @@ function AddCar() {
             >
               <button>Location</button>
             </li>
-          </ul>
+          </ul> */}
 
           <div className="tab-content">
             {/* Step 1 - Car Details */}

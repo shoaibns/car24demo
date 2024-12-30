@@ -1,28 +1,32 @@
-import React from "react";
+"use client";
 
-function Layout({ children }) {
+import StepNavigation from "@/app/components/addcar/StepNavigation";
+import { FormProvider } from "@/context/formContext";
+
+export default function AddCarLayout({ children }) {
   return (
-    <div>
-      <div className="mb-11">
-        <h1 className="mt-11 text-3xl font-bold text-gray-900">Add Listings</h1>
-        <p className="text-gray-600 pt-2">
-          Lorem ipsum dolor sit amet, consectetur.
-        </p>
+    <FormProvider>
+      <div className=" h-full flex flex-col mx-6  ">
+        {/* Navigation */}
+        <StepNavigation />
+
+        <div className="flex-1 overflow-y-auto ">
+          {/* Content */}
+          <div className="overflow-y-auto border rounded-xl p-6 h-[480px] bg-white shadow-md scrollbar-hide">
+            {children}
+          </div>
+        </div>
+
+        {/* Buttons - Prev & Next */}
+        {/* <div className="flex justify-between p-4">
+          <button className="py-2 px-5 text-gray-700 text-sm border border-gray-400 rounded-xl">
+            Previous
+          </button>
+          <button className="py-2 px-5 text-gray-700 text-sm border border-gray-400 rounded-xl">
+            Next
+          </button>
+        </div> */}
       </div>
-      <div>
-        <nav>
-          <ul>
-            <li>Car Details</li>
-            <li>Price</li>
-            <li>Features</li>
-            <li>Media</li>
-            <li>Locatio</li>
-          </ul>
-        </nav>
-      </div>
-      <div>{children}</div>
-    </div>
+    </FormProvider>
   );
 }
-
-export default Layout;
